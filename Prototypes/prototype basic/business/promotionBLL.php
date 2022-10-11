@@ -1,6 +1,6 @@
 <?php
 
-require_once "../data-acess/promotionDAL.php";
+require_once "../data-access/promotionDAL.php";
 
 class PromotionBLL {
     // private $promotionBLL = null;
