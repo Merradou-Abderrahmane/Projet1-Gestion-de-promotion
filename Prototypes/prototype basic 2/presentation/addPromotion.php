@@ -1,13 +1,13 @@
 <?php
 
-require_once "../data-access/promotionDAL.php";
+require_once "../business/promotionBLL.php";
     
-    $promotionDAL = new promotionDAl();
+    $promotionBAL = new promotionBLL();
 
 if(!empty($_POST)){
 	$promotion = new promotion();
 	$promotion->setName($_POST['name']);
-	$promotionDAL->addPromotion($promotion);
+	$promotionBAL->addPromotion($promotion);
 	
 	// redirect to index.php
 }
