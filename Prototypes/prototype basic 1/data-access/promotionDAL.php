@@ -24,7 +24,7 @@ class PromotionDAL extends Connection {
         foreach($promotionsList as $promotionList){
             $promotion = new Promotion();
             $promotion->setId($promotionList['id']);
-            $promotion->setname($promotionList['name']);
+            $promotion->setName($promotionList['name']);
 
             array_push($promotions, $promotion);  
         }
