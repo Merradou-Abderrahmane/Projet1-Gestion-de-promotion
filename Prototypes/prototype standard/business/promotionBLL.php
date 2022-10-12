@@ -28,6 +28,11 @@ class PromotionBLL {
         return $promotionBLL->updatePromotion($id, $name);
     }
 
+    public function deletePromotion($id){
+        $promotionBLL = new PromotionDAL();
+
+        return $promotionBLL->deletePromotion($id);
+    }
 }
 
 ?>

@@ -51,4 +51,12 @@ class PromotionDAL extends Connection {
         mysqli_query($this->Connect(), $updateRow);
     }
 
+    public function deletePromotion($id){
+        // Sql query
+        $deleteRow="DELETE FROM promotion WHERE id = $id";
+                          
+        // Execute query
+        mysqli_query($this->Connect(), $deleteRow);
+    }
+
 }
