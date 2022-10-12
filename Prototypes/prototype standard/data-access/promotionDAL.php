@@ -19,12 +19,12 @@ class PromotionDAL extends Connection {
         $result = mysqli_query($this->Connect(), $sqlGetData);
         $promotionsList = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-        $promotion = array();
+        $promotions = array();
 
         foreach($promotionsList as $promotionList){
             $promotion = new Promotion();
             $promotion->setId($promotionList['id']);
-            $promotion->setname($promotionList['name']);
+            $promotion->setName($promotionList['name']);
 
             array_push($promotions, $promotion);  
         }
