@@ -16,6 +16,18 @@ class PromotionBLL {
         return $promotionBLL->addPromotion($promotion);
     }
 
+    public function getPromotionById($id){
+        $promotionBLL = new PromotionDAL();
+
+        return $promotionBLL->getPromotionById($id);
+    }
+
+    public function updatePromotion($id, $name){
+        $promotionBLL = new PromotionDAL();
+
+        return $promotionBLL->updatePromotion($id, $name);
+    }
+
 }
 
 ?>

@@ -18,7 +18,7 @@ class PromotionDAL extends Connection {
         $sqlGetData = 'SELECT * FROM promotion';
         $result = mysqli_query($this->Connect(), $sqlGetData);
         $promotionsList = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+ 
         $promotions = array();
 
         foreach($promotionsList as $promotionList){
@@ -31,5 +31,24 @@ class PromotionDAL extends Connection {
         return $promotions;
     }
 
+    public function getPromotionById($id){
+        $sqlGetData = "SELECT * FROM promotion WHERE id = $id";
+        $result = mysqli_query($this->Connect(), $sqlGetData);
+        $promotionList = mysqli_fetch_assoc($result);
+
+        $promotion = new Promotion();
+        $promotion->setId($promotionList['id']);
+        $promotion->setName($promotionList['name']);
+
+        return $promotion;
+    }
+
+    public function updatePromotion($id, $name){
+        // Sql query
+        $updateRow="UPDATE promotion SET name = '$name' WHERE id = $id";
+                          
+        // Execute query
+        mysqli_query($this->Connect(), $updateRow);
+    }
 
 }

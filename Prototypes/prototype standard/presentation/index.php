@@ -31,7 +31,7 @@ $data = $promotionBAL->getAllPromotions();
                 <td><?= $promotion->getName()?></td>
                 <td>
                     <a href="deletePromotion.php?id=<?php echo $promotion->getId() ?>">Supprimer</a>
-                    <a href="editPromotion.php?id=<?php echo $promotion->getId() ?>">Modifier</a>
+                    <a href="updatePromotion.php?id=<?php echo $promotion->getId() ?>">Modifier</a>
                 </td>
             </tr>
             <?php }?>
