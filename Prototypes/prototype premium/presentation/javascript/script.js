@@ -2,7 +2,7 @@
 
 function fill(Value) {
 
-    //Assigning value to "search" div in "search.php" file.
+    //Assigning value to "search" div in "index.php" file.
  
     $('#search').val(Value);
  
@@ -14,7 +14,7 @@ function fill(Value) {
  
  $(document).ready(function() {
  
-    //On pressing a key on "Search box" in "search.php" file. This function will be called.
+    //On pressing a key on "Search box" in "index.php" file. This function will be called.
  
     $("#search").keyup(function() {
  
@@ -24,9 +24,9 @@ function fill(Value) {
  
         //Validating, if "name" is empty.
  
-        if (name == "") {
+        if (name == " ") {
  
-            //Assigning empty value to "display" div in "search.php" file.
+            //Assigning empty value to "display" div in "index.php" file.
  
             $("#display").html("");
  
@@ -62,9 +62,9 @@ function fill(Value) {
  
                 success: function(html) {
  
-                    //Assigning result to "display" div in "search.php" file.
+                    //Assigning result to "display" div in "index.php" file.
  
-                    $("#display").html(html).show();
+                    $("#results").html(html);
  
                 }
  

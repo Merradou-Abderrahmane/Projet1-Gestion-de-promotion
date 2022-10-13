@@ -33,6 +33,14 @@ class PromotionBLL {
 
         return $promotionBLL->deletePromotion($id);
     }
+
+    public function searchByTitle($title){
+        $promotionBLL = new PromotionDAL();
+
+        return $promotionBLL->searchByTitle($title);
+    }
+
+    
 }
 
 ?>
