@@ -18,5 +18,9 @@ Class Connection {
     }
 
 }
+function Connect(){
+    $connection = mysqli_connect("localhost",'root','','projet1');
+return $connection;
+}
 
 ?>
