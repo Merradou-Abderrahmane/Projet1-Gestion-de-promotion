@@ -1,77 +1,21 @@
-//Getting value from "search.php".
+$(document).ready(function() {
+    $('#search').keyup(function() {
+        var input = $(this).val();
+        // alert(input);
 
-function fill(Value) {
-
-    //Assigning value to "search" div in "index.php" file.
- 
-    $('#search').val(Value);
- 
-    //Hiding "display" div in "search.php" file.
- 
-    $('#display').hide();
- 
- }
- 
- $(document).ready(function() {
- 
-    //On pressing a key on "Search box" in "index.php" file. This function will be called.
- 
-    $("#search").keyup(function() {
- 
-        //Assigning search box value to javascript variable named as "name".
- 
-        var name = $('#search').val();
- 
-        //Validating, if "name" is empty.
- 
-        if (name == " ") {
- 
-            //Assigning empty value to "display" div in "index.php" file.
- 
-            $("#display").html("");
- 
-        }
- 
-        //If name is not empty.
- 
-        else {
- 
-            //AJAX is called.
- 
+        if (input != ' ') {
             $.ajax({
- 
-                //AJAX type is "Post".
- 
-                type: "POST",
- 
-                //Data will be sent to "search.php".
- 
-                url: "ajax.php",
- 
-                //Data, that will be sent to "search.php".
- 
+                url: "search.php",
+                method: "POST",
                 data: {
- 
-                    //Assigning value of "name" into "search" variable.
- 
-                    search: name
- 
+                    key: input
                 },
- 
-                //If result found, this function will be called.
- 
-                success: function(html) {
- 
-                    //Assigning result to "display" div in "index.php" file.
- 
-                    $("#results").html(html);
- 
+                success: function(data) {
+                    $('#results').html(data);
                 }
- 
             });
- 
+
         }
- 
+
     });
- 
- });
+});
