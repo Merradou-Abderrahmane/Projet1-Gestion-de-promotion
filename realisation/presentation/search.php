@@ -11,10 +11,8 @@ if (isset($_POST['key'])) {
    //Creating a simple table to display result.
 ?>
 
-   <table>
-      <tr>
-         <th>Nom promotion</th>
-      </tr>
+   <table >
+
 
       <?php
       foreach ($results as $promotion) {

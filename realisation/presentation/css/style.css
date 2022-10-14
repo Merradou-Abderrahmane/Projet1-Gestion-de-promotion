@@ -1,0 +1,53 @@
+body{
+        
+        margin-top: 7rem;
+        text-align: center;
+      
+}
+
+.button {
+  background-color: #4699d8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#search{
+    height: 3rem;
+    margin-left: 5rem;
+}
+
+table {
+
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+table td {
+    
+        /* padding-top: 10px; */
+        padding-bottom: 6px;
+        padding-left: 2.5rem;
+        padding-right: 40px;  
+}
+
+table td a{
+    text-decoration: none;
+    color: #4699d8;
+}
+
+.delete {
+    color: red;
+    margin-left: 2rem;
+}
+
+.edit {
+    color: green;
+    margin-left: 2rem;
+}

@@ -20,14 +20,16 @@ $data = $promotionBAL->getAllPromotions();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Including our scripting file. -->
     <script type="text/javascript" src="javascript/script.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Promotion management</title>
 </head>
 
 <body>
-    <div>
-        <a href="addPromotion.php">Ajouter promotion</a>
+    <div class="container">
+        <a class="button" style="text-decoration: none;" href="addPromotion.php">Ajouter promotion</a>
         <!-- Search box. -->
-        <input type="text" id="search" placeholder="Search" />
+        <input type="text" id="search" placeholder="Chercher promotion" />
         <br>
         <!-- Suggestions will be displayed in below div. -->
 
@@ -35,9 +37,6 @@ $data = $promotionBAL->getAllPromotions();
         <div id="results">
 
             <table>
-                <tr>
-                    <th>Nom promotion</th>
-                </tr>
 
                 <?php
                 foreach ($data as $promotion) {
@@ -46,8 +45,8 @@ $data = $promotionBAL->getAllPromotions();
                     <tr>
                         <td><?= $promotion->getName() ?></td>
                         <td>
-                            <a href="deletePromotion.php?id=<?php echo $promotion->getId() ?>">Supprimer</a>
-                            <a href="updatePromotion.php?id=<?php echo $promotion->getId() ?>">Modifier</a>
+                            <a class="delete" href="deletePromotion.php?id=<?php echo $promotion->getId() ?>">Supprimer</a>
+                            <a class="edit" href="updatePromotion.php?id=<?php echo $promotion->getId() ?>">Modifier</a>
                         </td>
                     </tr>
                 <?php } ?>
