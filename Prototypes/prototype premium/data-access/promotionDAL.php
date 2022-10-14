@@ -59,11 +59,11 @@ class PromotionDAL extends Connection {
         mysqli_query($this->Connect(), $deleteRow);
     }
 
-    public function searchByTitle($title)
+    public function searchByName($name)
     {
         $promotions = [];
 
-        $query = "SELECT * FROM promotion WHERE name LIKE '%$title%'";
+        $query = "SELECT * FROM promotion WHERE name LIKE '%$name%'";
         $result = mysqli_query(connect(), $query);
 
         while ($promotion = mysqli_fetch_assoc($result))

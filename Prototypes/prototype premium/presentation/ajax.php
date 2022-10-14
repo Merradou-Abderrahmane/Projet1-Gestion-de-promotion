@@ -7,8 +7,8 @@ if (isset($_POST['search'])) {
    //Search box value assigning to $name variable.
    $name = $_POST['search'];
    //Search query.
-   $results = $promotionBAL->searchByTitle($name);
-   //Creating unordered list to display result.
+   $results = $promotionBAL->searchByName($name);
+   //Creating a simple table to display result.
 ?>
 
    <table>

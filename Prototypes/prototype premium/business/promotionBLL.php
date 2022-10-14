@@ -34,10 +34,10 @@ class PromotionBLL {
         return $promotionBLL->deletePromotion($id);
     }
 
-    public function searchByTitle($title){
+    public function searchByName($name){
         $promotionBLL = new PromotionDAL();
 
-        return $promotionBLL->searchByTitle($title);
+        return $promotionBLL->searchByName($name);
     }
 
     

@@ -17,7 +17,7 @@ $data = $promotionBAL->getAllPromotions();
 
             if (input != ' ') {
                 $.ajax({
-                    url: "search.php",
+                    url: "ajax.php",
                     method: "POST",
                     data: {
                         key: input

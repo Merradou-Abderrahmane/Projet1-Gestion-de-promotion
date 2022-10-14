@@ -1,4 +1,4 @@
-//Getting value from "ajax.php".
+//Getting value from "search.php".
 
 function fill(Value) {
 
@@ -44,11 +44,11 @@ function fill(Value) {
  
                 type: "POST",
  
-                //Data will be sent to "ajax.php".
+                //Data will be sent to "search.php".
  
                 url: "ajax.php",
  
-                //Data, that will be sent to "ajax.php".
+                //Data, that will be sent to "search.php".
  
                 data: {
  
@@ -58,7 +58,7 @@ function fill(Value) {
  
                 },
  
-                //If result found, this funtion will be called.
+                //If result found, this function will be called.
  
                 success: function(html) {
  
