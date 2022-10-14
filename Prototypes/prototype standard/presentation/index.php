@@ -18,24 +18,7 @@ $data = $promotionBAL->getAllPromotions();
 <body>
     <div>
         <a href="addPromotion.php">Ajouter promotion</a>
-        <table>
-            <tr>
-                <th>Nom promotion</th>
-            </tr>
-
-            <?php
-                    foreach($data as $promotion){
-            ?>
-
-            <tr>
-                <td><?= $promotion->getName()?></td>
-                <td>
-                    <a href="deletePromotion.php?id=<?php echo $promotion->getId() ?>">Supprimer</a>
-                    <a href="updatePromotion.php?id=<?php echo $promotion->getId() ?>">Modifier</a>
-                </td>
-            </tr>
-            <?php }?>
-        </table>
+        
     </div>
 </body>
 </html>

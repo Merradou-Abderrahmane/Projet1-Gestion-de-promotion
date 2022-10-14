@@ -22,39 +22,34 @@ $data = $promotionBAL->getAllPromotions();
     <script type="text/javascript" src="javascript/script.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <title>Promotion management</title>
 </head>
 
 <body>
-    <div class="container" style="margin-top: 10rem;">
+    <div class="container">
         <a class="button" style="text-decoration: none;" href="addPromotion.php">Ajouter promotion</a>
         <!-- Search box. -->
         <input type="text" id="search" placeholder="Chercher promotion" />
         <br>
         <!-- Suggestions will be displayed in below div. -->
+
+
         <div id="results">
 
-            <table class="table table-bordred table-striped" style="max-width: 50rem;">
+            <table>
 
-                <thead>
-                    <th> Nom de promotion </th>
-                    <th> Edit </th>
-                    <th> Delete </th>
-                </thead>
-                <tbody>
+                <?php
+                foreach ($data as $promotion) {
+                ?>
+
                     <tr>
-                        <td> Promotion </td>
+                        <td><?= $promotion->getName() ?></td>
                         <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete">
-                                <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" style="padding: 1rem;"><span class="glyphicon glyphicon-trash"></span></button></p>
+                            <a class="delete" href="deletePromotion.php?id=<?php echo $promotion->getId() ?>">Supprimer</a>
+                            <a class="edit" href="updatePromotion.php?id=<?php echo $promotion->getId() ?>">Modifier</a>
                         </td>
                     </tr>
-                </tbody>
-
+                <?php } ?>
             </table>
         </div>
     </div>
